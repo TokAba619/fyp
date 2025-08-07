@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-CS Guardian Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="web.css"> 
+    
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <a href="#homepage" class="navbar-brand">G-CS Guardian</a>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#homepage" onclick="closeMenu()">Home</a></li>
+            <li><a href="#news" onclick="closeMenu()">News</a></li>
+            <li><a href="#experiences" onclick="closeMenu()">Scanner</a></li>
+            <li><a href="#gallery" onclick="closeMenu()">Results</a></li>
+            <li><a href="#testimonials" onclick="closeMenu()">History</a></li>
+            <li><a href="#faq" onclick="closeMenu()">About Us</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    
+    <section class="homepage-section" id="homepage">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide active">
+                        <img src="paper1.png" alt="Google Cloud">
+                        <div class="slide-content">
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <h1 class="slide-title">What is Google Cloud?</h1>
+                            <p class="slide-description">Google Cloud is a service by Google that lets people and businesses use powerful computers over the internet to store files, run websites, build apps, and keep data safe, without needing to buy or manage their own hardware.</p>
+                            <button class="explore-btn" onclick="scrollToSection('news')">Explore Now</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="paper10.png" alt="storage bucket">
+                        <div class="slide-content">
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <h1 class="slide-title">What is Storage Bucket?</h1>
+                            <p class="slide-description">A Google Cloud Storage bucket is a container used to store and organize files like images, documents, and backups on the Google Cloud Platform. It's scalable, secure, and accessible online. However, if not properly configured, it can expose sensitive data to the public, leading to serious security risks.</p>
+                            <button class="explore-btn" onclick="scrollToSection('news')">Explore More</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="paper9.png" alt="Our Tools">
+                        <div class="slide-content">
+                            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                            <button class="explore-btn" onclick="scrollToSection('experiences')">Try our Tool</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="nav-button prev" onclick="prevSlide()" aria-label="Previous Slide">‹</button>
+            <button class="nav-button next" onclick="nextSlide()" aria-label="Next Slide">›</button>
+            <div class="slide-indicators" id="indicators"></div>
+            <div class="scroll-down" onclick="scrollToSection('news')" aria-label="Scroll to next section">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="content-section news" id="news">
+      <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="vid3.mov" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Real Cases Happen in World</h2>
+            <p class="section-content">
+                Misconfigured Google Cloud buckets can expose sensitive data and cause serious risks.
+                 Without proper security, companies can face financial loss, legal issues, and damage to their reputation.</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="cases1.webp">
+                    <h3>Google Cloud leak linked to Shark Tank contestant exposes 83,000</h3>
+                    <p>In April 2024, a misconfigured GCS bucket linked
+                       to Alice’s Table exposed over 37,000 files containing
+                       personally identifiable information (PII) of more than
+                       83,000 customers, including names, email addresses, and 
+                       home addresses</p>
+                </div>
+                <div class="card">
+                    <img src="cases2.png">
+                    <h3>Ophion Security found misconfigured Google Cloud buckets that exposed sensitive data.</h3>
+                    <p>In December, we identified and reported misconfigurations on numerous sensitive Google Cloud storage buckets that contained millions of sensitive user data.</p>
+                </div>
+                <div class="card">
+                    <img src="cases3.webp">
+                    <h3>Google Cloud Buckets Exposed in Rampant Misconfiguration</h3>
+                    <p>Comparitech surveyed 2,064 Google Cloud buckets and found 131 were open to unauthorized access. Exposed data included 6,000 scanned documents like passports and birth certificates from children in India, and a Russian developer’s database with email server credentials and chat logs.</p>
+                </div>
+                <div class="card">
+                    <img src="cases4.png">
+                    <h3>Thousands of Android and iOS Apps Leak Data From the Cloud</h3>
+                    <p>Zimperium’s 2021 report found that many mobile apps had hard-coded Google Cloud credentials, leading to data leaks like chat messages, medical info, and device IDs. About 14% of cloud-based apps had serious security flaws.</p>
+                </div>
+                <div class="card">
+                    <img src="cases5.png">
+                    <h3>WXobin leak: used AI to screen job applicants but storing personal data in an open bucket</h3>
+                    <p>HR tech company Xobin misconfigured a Google Cloud bucket, exposing data of over 523,000 job applicants. The leaked files included resumes, IDs, passports, contact details, and assessments. The bucket had over 47 million files and stayed public for months before being found.</p>
+                </div>
+                <div class="card">
+                    <img src="cases6.png">
+                    <h3>Massive data leak: 200 billion files exposed in cloud buckets</h3>
+                    <p>An AI startup called WotNot, based in India, accidentally exposed 346,381 files through a misconfigured GCS bucket with no authentication required. The data included passport scans, medical records, resumes, travel itineraries, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<section class="content-section experiences" id="experiences">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="vid5.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">Welcome to GCS Guardian Scanner</h2>
+    <p class="section-content">Need a quick scan of your cloud storage? I’m ready!</p>
+
+    <div class="form">
+      <form action="link api">
+        <h1 style="font-size: 2rem;">Upload Google Cloud Project ID</h1>
+
+        <div class="card1">
+  <div class="terminal">
+    <div class="terminal-header">
+      <span class="terminal-title">
+        <svg
+          class="terminal-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 17l6-6-6-6M12 19h8"></path>
+        </svg>
+        Terminal
+      </span>
+    </div>
+    <div class="terminal-body">
+      <div class="command-line">
+        <span class="prompt">Project ID:</span>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            class="input-field"
+            placeholder="E.g.: g-cs-guardian"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <br>
+        <button>
+  <span class="shadow"></span>
+  <span class="edge"></span>
+  <span class="front text"> Scan And Upload</span></button>
+      </form>
+    </div>
+  </div>
+
+  <style>
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .form input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+</style>
+<style>
+  button {
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ cursor: pointer;
+ outline-offset: 4px;
+ transition: filter 250ms;
+ user-select: none;
+ touch-action: manipulation;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ transform: translateY(2px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(345deg 100% 47%);
+ will-change: transform;
+ transform: translateY(-4px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+ filter: brightness(110%);
+}
+
+button:hover .front {
+ transform: translateY(-6px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+ transform: translateY(-2px);
+ transition: transform 34ms;
+}
+
+button:hover .shadow {
+ transform: translateY(4px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .shadow {
+ transform: translateY(1px);
+ transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+ outline: none;
+}
+</style>
+
+ <div class="scroll-down" onclick="scrollToSection('gallery')" aria-label="Scroll to next section">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+</section>
+
+
+
+    <section class="content-section gallery" id="gallery">
+       <video autoplay muted loop playsinline class="bg-video">
+    <source src="vid5.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Your Scan is Complete!</h2>
+            <p class="section-content">This report provides detailed insights into the configuration status of your scanned Google Cloud Storage buckets.</p>
+
+        </div>
+    </section>
+
+
+
+    <section class="content-section testimonials" id="testimonials">
+      <video autoplay muted loop playsinline class="bg-video">
+        <source src="vid4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">History</h2>
+            <p class="section-content"></p>
+
+        </div>
+    </section>
+
+
+
+  <section class="content-section faq" id="faq">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="vid.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Foreground Content -->
+  <div class="faq-content">
+    <h2 class="section-title">Meet the Minds Behind It All</h2>
+    <p class="section-content">Back-End Brains & Front-End Flair</p>
+
+    <div class="team-slider">
+      <!-- Member 1 -->
+      <div class="team-card" onclick="openModal('member1')">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('siramir.jpg'); background-size: cover;">
+            <div class="overlay">
+              <h3>Supervisor</h3>
+              <p>Sir Amir Hakeem Bin Sahrir</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <p>"Forever Sensei and Mentor."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-card" onclick="openModal('member2')">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('aqil.jpg'); background-size: cover;">
+            <div class="overlay">
+              <h3>Group Leader</h3>
+              <p>Muhammad Aqil Darwisy Bin Nor Azli</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <p>"Failure Is Just a Temporary Syntax Error"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-card" onclick="openModal('member3')">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('ilhan.jpg'); background-size: cover;">
+            <div class="overlay">
+              <h3>Technical Leader</h3>
+              <p>Ilhan Munsieff Bin Abdullah</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <p>"The best defense against cyber threats is a well-educated mind."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-card" onclick="openModal('member4')">
+        <div class="card-inner">
+          <div class="card-front" style="background-image: url('jib.jpg'); background-size: cover;">
+            <div class="overlay">
+              <h3>Group Member</h3>
+              <p>Jibril Ruhul Amin Bin Mohd Nor Ariffin</p>
+            </div>
+          </div>
+          <div class="card-back">
+            <p>"In a world full of threats, be the shield."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <section class="content-section contact" id="contact">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-content">
+                Have a question or need help with our project?<br> 
+                Feel free to reach out anytime our team is ready to assist you with anything you need.
+            </p>
+
+            <div class="contact-content">
+                <div class="contact-form visible">
+                    <form action="#" method="POST">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject of your message" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info visible">
+                    <h3>Get In Touch</h3>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> +60 - 11 1605 7668</li>
+                        <li><i class="fas fa-envelope"></i> gcsguardian@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+      <script src="web.js"></script>
+  <script>
+  // Step 1: Get token from localStorage
+  const token = localStorage.getItem("access_token");
+
+  // Step 2: Redirect to login if no token is found
+  if (!token) {
+    window.location.href = "login.html";
+  }
+
+  // Step 3: Display email and role from localStorage (if available)
+  const userEmail = localStorage.getItem("email");
+  const userRole = localStorage.getItem("role");
+
+  document.getElementById("user-email").textContent = userEmail || "Unknown";
+  document.getElementById("user-role").textContent = userRole || "Unknown";
+
+  // Step 4: Example of fetching protected data from your backend
+  function fetchProtectedData() {
+    fetch("https://gcp-bucket-detector-backend-661175673686.us-central1.run.app/protected-endpoint", {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json"
+      }
+    })
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Unauthorized or failed to fetch protected data");
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log("Protected data:", data);
+      // Optional: update UI with protected data
+    })
+    .catch(err => {
+      console.error("Error fetching protected data:", err);
+      // Optional: handle error (logout or show message)
+    });
+  }
+
+  // Optional: call this function if you need the data immediately
+  // fetchProtectedData();
+</script>
+
+
+
+    </body>
+  
+</html>

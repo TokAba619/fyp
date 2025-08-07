@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>G-CS Guardian</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <br><br><br>
+                <h1 class="logo">G-CS Guardian</h1>
+            </div>
+        </div>
+
+        <div class="content">
+            <br><br><br>
+            <h1>Google Cloud <br><span>Storage Bucket</span> <br>Protector</h1><br><br>
+            <p class="par">
+                This project creates a system that can find storage buckets on Google Cloud <br>
+                that are open to the public. It will send alerts when it finds these buckets and <br>
+                help users understand the risks of having public storage buckets through <br>
+                information on our website.
+            </p>
+
+            <div class="form">
+                <br>
+                <form id="loginForm">
+                    <h2>Login Here</h2>
+
+                    <!-- ✅ Updated with IDs for JavaScript -->
+                    <input type="text" id="email" name="username" placeholder="Enter Email Here" required>
+                    <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="learn-more">Login</button>
+                    </div>
+
+                    <p class="link">Don't have an account<br>
+                        <a href="https://gcp-bucket-detector-backend-661175673686.us-central1.run.app/auth/login">Sign up</a> here
+                    </p>
+                </form>
+
+                <!-- Error message display -->
+                <div id="error" style="color: red; text-align: center; margin-top: 10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Working JavaScript Login -->
+  <script>
+  document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    login();
+  });
+
+  function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    fetch("https://gcp-bucket-detector-backend-661175673686.us-central1.run.app/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Login failed");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (data.access_token) {
+          // Save token, email, and role in localStorage
+          localStorage.setItem("access_token", data.access_token);
+          if (data.email) localStorage.setItem("email", data.email);
+          if (data.role) localStorage.setItem("role", data.role);
+
+          // Redirect to web.html
+          window.location.href = "web.html";
+        } else {
+          document.getElementById("error").textContent = "Invalid email or password.";
+        }
+      })
+      .catch((err) => {
+        console.error("Login Error:", err);
+        document.getElementById("error").textContent = "Something went wrong. Try again.";
+      });
+  }
+</script>
+
+
+</body>
+</html>
